@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <p>Today's Question: {{question.question_text}}</p>
+    <p>its choices are: </p>
+    <ul>
+        {%for choice in question.choice_set.all %}
+            <li>{{  choice.choice_text  }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
