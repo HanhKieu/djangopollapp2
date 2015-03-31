@@ -5,11 +5,15 @@
     <title></title>
 </head>
 <body>
+
+    <h1>{{ question.question_text }}</h1>
+
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{ % endif %}
     <p>Today's Question: {{question.question_text}}</p>
     <p>its choices are: </p>
     <ul>
         {%for choice in question.choice_set.all %}
-            <li><a href = "{% url 'polls:detail' question.id %}">{{  choice.choice_text  }}</li>
+            <li><a href = "{% url 'polls:detail' question.id %}">{{  choice.choice_text  }}</a></li>
         {% endfor %}
     </ul>
 </body>
